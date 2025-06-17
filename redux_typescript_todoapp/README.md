@@ -1,54 +1,78 @@
-# React + TypeScript + Vite
+# Redux + TypeScript Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, Redux ve TypeScript kullanılarak geliştirilmiş basit bir Todo uygulamasıdır. Modern web geliştirme pratiklerini ve state yönetimini göstermek için tasarlanmıştır.
 
-Currently, two official plugins are available:
+## 🚀 Kullanılan Teknolojiler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- TypeScript
+- Redux Toolkit
 
-## Expanding the ESLint configuration
+## 📦 Proje Yapısı
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+src/
+├── components/         # React bileşenleri
+│   ├── Todo.tsx       # Tekil todo bileşeni
+│   ├── TodoList.tsx   # Todo listesi bileşeni
+│   └── TodoCreate.tsx # Yeni todo oluşturma bileşeni
+├── redux/             # Redux store ve slice'lar
+│   ├── store.tsx      # Redux store konfigürasyonu
+│   └── todoSlice.tsx  # Todo state yönetimi
+├── types/             # TypeScript tip tanımlamaları
+│   └── Types.tsx      # Todo ve state tipleri
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Özellikler
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Todo ekleme
+- Todo silme
+- Todo düzenleme
+- TypeScript ile tip güvenliği
+- Redux ile merkezi state yönetimi
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🔧 Kurulum
+
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/tarikaytug/Redux-Typescript-Todo-App
 ```
+
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
+```
+
+3. Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+```
+
+## 💡 Nasıl Çalışır?
+
+### State Yönetimi
+- Redux Toolkit kullanılarak merkezi state yönetimi sağlanmıştır
+- `todoSlice.tsx` içinde todo işlemleri için reducer'lar tanımlanmıştır:
+  - `createTodo`: Yeni todo ekleme
+  - `removeTodoById`: Todo silme
+  - `updateTodo`: Todo güncelleme
+
+### Tip Güvenliği
+- TypeScript ile tam tip güvenliği sağlanmıştır
+- `Types.tsx` içinde tanımlanan interface'ler:
+  - `TodoType`: Todo öğelerinin yapısı
+  - `TodoInitialState`: Redux store'un başlangıç durumu
+
+### Bileşenler
+- `TodoCreate`: Yeni todo oluşturma formu
+- `TodoList`: Tüm todoları listeler
+- `Todo`: Tekil todo öğesi ve düzenleme/silme işlemleri
+
+## 🎨 Stil ve Tasarım
+- Modern ve minimal tasarım
+- Responsive layout
+- React Icons ile görsel öğeler
+- CSS ile özelleştirilmiş bileşenler
+
+
