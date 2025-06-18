@@ -31,6 +31,7 @@ src/
 - Todo düzenleme
 - TypeScript ile tip güvenliği
 - Redux ile merkezi state yönetimi
+- **localStorage ile veri kalıcılığı** - Sayfa yenilendiğinde veriler korunur
 
 ## 🔧 Kurulum
 
@@ -57,6 +58,12 @@ npm run dev
   - `createTodo`: Yeni todo ekleme
   - `removeTodoById`: Todo silme
   - `updateTodo`: Todo güncelleme
+
+### Veri Kalıcılığı
+- **localStorage Desteği**: Tüm todo verileri tarayıcının localStorage'ında saklanır
+- **Otomatik Kaydetme**: Her state değişikliğinde veriler otomatik olarak localStorage'a kaydedilir
+- **Otomatik Yükleme**: Uygulama başlatıldığında veriler localStorage'dan otomatik olarak yüklenir
+- **Hata Yönetimi**: localStorage işlemlerinde oluşabilecek hatalar yakalanır ve konsola loglanır
 
 ### Tip Güvenliği
 - TypeScript ile tam tip güvenliği sağlanmıştır
